@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - Web431</title>
+    <link rel="stylesheet" th:href="@{/css/signin.css}">
+</head>
+<body>
+    <div class="signin-container">
+        <div class="signin-card">
+            <div class="signin-header">
+                <h1>Success!</h1>
+                <p>You have successfully signed in.</p>
+            </div>
+            <div class="success-content">
+                <div class="success-icon">✓</div>
+                <a th:href="@{/}" class="signin-button">Back to Sign In</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

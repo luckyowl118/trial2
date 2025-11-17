@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Web431</title>
+    <link rel="stylesheet" th:href="@{/css/signin.css}">
+</head>
+<body>
+    <div class="signin-container">
+        <div class="signin-card">
+            <div class="signin-header">
+                <h1>Welcome Back</h1>
+                <p>Sign in to your account</p>
+            </div>
+
+            <form th:action="@{/signin}" th:object="${signInForm}" method="post" class="signin-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        th:field="*{email}" 
+                        placeholder="Enter your email"
+                        class="form-control"
+                        required>
+                    <span class="error-message" th:if="${#fields.hasErrors('email')}" 
+                          th:errors="*{email}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        th:field="*{password}" 
+                        placeholder="Enter your password"
+                        class="form-control"
+                        required>
+                    <span class="error-message" th:if="${#fields.hasErrors('password')}" 
+                          th:errors="*{password}"></span>
+                </div>
+
+                <div class="form-group remember-me">
+                    <label class="checkbox-label">
+                        <input type="checkbox" th:field="*{rememberMe}">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="signin-button">Sign In</button>
+            </form>
+
+            <div class="signin-footer">
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
